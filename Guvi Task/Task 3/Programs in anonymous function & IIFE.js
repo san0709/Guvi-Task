@@ -74,16 +74,16 @@
             prime();
                             //IIFE:
             let arr=[1,2,3,4,5,6,7,8,9,10,11,13,15,19,27];
-            let prime =function(){
+            (function(){
                 for(i=0;i<arr.length;i++)
                 {
                     if(arr[i]==1||arr[i]==2)
                     {
                     console.log(arr[i])
                     }
-                    else if(arr[i]%2!==0&&arr[i]%3!==0){
+                    else if(arr[i]%2!==0&&arr[i]%3!==0)
+                    {
                         console.log(arr[i]);
                     }
                 }
-                };
-            prime();
+                })();
