@@ -1,0 +1,25 @@
+Window :
+The Window interface represents a window containing a DOM document
+
+Document:
+A document is an object inside the window object and we use a document object for manipulation inside the document.
+
+Difference between Window and Document:
+
+1)Window represents the browser window in we  are seeing the content. 
+2)The properties related to it are stored in the window object.
+3)It is loaded before the document because window contains document. 
+4)The window is the global element for all objects, functions, etc.
+5)It is an object of the browser.We can access document object properties inside the window.
+6)SYNTAX:  window:{
+        document:{properties}
+    } Example: window.document.title will return the title of the document.
+
+1)Document reprsents the document loaded inside the window or browser. 
+2)The properties related to it are stored in the document object.
+3)It is loaded after the loading window because the window contains a document. 
+4)It is the root element of the document object model.
+5)It is an object of window.We can not access windows objects properties inside the document.		
+6)SYNTAX: document:{ properties} Example: document.title will return the title of the document	
+
+
