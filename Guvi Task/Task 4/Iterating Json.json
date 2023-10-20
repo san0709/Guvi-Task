@@ -1,0 +1,36 @@
+var BoxOffice = [
+    {
+        "movie": "Leo",
+        "actor": "vijay",
+        "year": 2023
+    },
+    {
+        "movie": "Vikram",
+        "actor": "Kamal Hasan",
+        "year":2022
+    },
+    {
+        "movie": "Kaithi",
+        "actor": "Karthi",
+        "year": 2019
+    }
+ ]
+ // Using for loop:
+ for( let i=0; i<BoxOffice.length; i++){
+         let obj=BoxOffice[i];
+    console.log(obj.movie+":"+obj.actor+":"+obj.year);
+ }
+
+ // Using for in Loop:
+
+ for(let obj in BoxOffice){
+    obj=BoxOffice[obj];
+    console.log(obj.movie+":"+obj.actor+":"+obj.year)
+ }
+
+ // Using for of Loop:
+ for(let obj of BoxOffice){
+    console.log(obj.movie+":"+obj.actor+":"+obj.year);
+ }
+// Using for Each Loop:
+BoxOffice.forEach(function(BoxOffice) { console.log(BoxOffice.movie+":"+BoxOffice.actor+":"+BoxOffice.year); });

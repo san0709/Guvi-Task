@@ -1,0 +1,30 @@
+let myResume={
+    "Basic":{
+        "Name":"Sandhiya Selvam",
+        "DOB":"07.06.1997",
+        "Address": "Chrompet,Chennai-44",
+        "Phone number": 9876543210,
+        "Email id": "sandhiya6797@gmail.com",
+        "Languages known": "Tamil,Englis"
+    },
+    "Education":{
+        "UG": "Bsc.Computer Science, Mohamed Sathak college of Arts & Science",
+        "HSC & SSLC": "RMGHSS"
+    },
+    "Profile":{
+        "Summary":" Versatile, result-oriented professional with over 6.5 years of work experience in Order Management, SAP SD, Returns, Freight Claims, Freight Forwarding, Salesforce & Citrix applications",
+        "Git Hub": "https://github.com/san0709"
+    },
+    "Skills":{
+        "Core skills":"SAP SD ,Microsoft Office & Open Office, Windows XP, 7 & 10 , Internet Application ",
+    "Softskills":"Leadership ,Team Building ,Communicator ,Customer-centric ,Decision-making ,Innovative & Planner"    
+    },
+    "Work Experience":{
+        "Company":"Wipro",
+        "Designation": "Senior Order Management Analyst",
+        "Years": 4.5,
+        "Role" : "Served as Subject Matter Expert with extensive experience in procuring high-quality raw materials and arranging timely transportation"
+    },
+    "Area of Interest":"Web Development"
+};
+console.log(myResume);
