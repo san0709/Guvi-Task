@@ -1,0 +1,89 @@
+.checked {
+  color: orange;
+}
+
+/* Add your custom styles here */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center align the form */
+#surveyform {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Style the input fields */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style the table */
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Highlight header cells */
+th {
+  background-color: #f2f2f2;
+}
+
+/* Style the star icons */
+.fa-star {
+  color: gold;
+}
+
+/* Hide radio inputs */
+input[type="radio"] {
+  display: none;
+}
+
+/* Style labels for radio inputs */
+input[type="radio"] + label::before {
+  content: "\2606"; /* Empty star */
+  margin-right: 5px;
+}
+
+input[type="radio"]:checked + label::before {
+  content: "\2605"; /* Filled star */
+}
+
+/* Adjust label styles */
+label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Apply styles to the red star */
+.red-star {
+  color: red;
+}
+
+/* Ensure responsiveness */
+@media screen and (max-width: 600px) {
+  /* Adjust styles for smaller screens if needed */
+  /* For example: reduce padding or font sizes */
+  #surveyform {
+    padding: 10px;
+  }
+}

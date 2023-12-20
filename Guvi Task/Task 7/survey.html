@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Web Design</title>
+    <link rel="stylesheet" href="survey.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <form id="surveyform">
+      <div>
+        <label><strong>Name</strong></label>
+        <span class="red-star">*</span>
+        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Last Name" /><br />
+        <label for="email"><strong>Email</strong></label>
+        <span class="red-star">*</span>
+        <input type="email" id="email" />
+      </div>
+
+      <div><strong>Your Experience</strong><span class="red-star">*</span></div>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <div>Overall, how would you rate your experience with us?</div>
+
+      <table class="table table-striped">
+        <strong
+          >How satisfied are you to with<span class="red-star">*</span></strong
+        >
+
+        <thead>
+          <tr>
+            <th></th>
+            <th>Very Unsatisfied</th>
+            <th>Unsatisfied</th>
+            <th>Neutral</th>
+            <th>Satisfied</th>
+            <th>Very Satisfied</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Purchase</td>
+            <td>
+              <input
+                type="radio"
+                id="purchase1"
+                name="purchase"
+                value="1"
+              /><label for="purchase1"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="purchase2"
+                name="purchase"
+                value="2"
+              /><label for="purchase2"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="purchase3"
+                name="purchase"
+                value="3"
+              /><label for="purchase3"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="purchase4"
+                name="purchase"
+                value="4"
+              /><label for="purchase4"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="purchase5"
+                name="purchase"
+                value="5"
+              /><label for="purchase5"></label>
+            </td>
+          </tr>
+          <tr>
+            <td>Service</td>
+            <td>
+              <input
+                type="radio"
+                id="service1"
+                name="service"
+                value="1"
+              /><label for="service1"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="service2"
+                name="service"
+                value="2"
+              /><label for="service2"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="service3"
+                name="service"
+                value="3"
+              /><label for="service3"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="service4"
+                name="service"
+                value="4"
+              /><label for="service4"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="service5"
+                name="service"
+                value="5"
+              /><label for="service5"></label>
+            </td>
+          </tr>
+          <tr>
+            <td>Company Overall</td>
+            <td>
+              <input
+                type="radio"
+                id="overall1"
+                name="overall"
+                value="1"
+              /><label for="overall1"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="overall2"
+                name="overall"
+                value="2"
+              /><label for="overall2"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="overall3"
+                name="overall"
+                value="3"
+              /><label for="overall3"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="overall4"
+                name="overall"
+                value="4"
+              /><label for="overall4"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="overall5"
+                name="overall"
+                value="5"
+              /><label for="overall5"></label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-striped">
+        <strong>How likely are you to<span class="red-star">*</span></strong>
+
+        <thead>
+          <tr>
+            <th></th>
+            <th>Very Unlikely</th>
+            <th>Unlikely</th>
+            <th>Neutral</th>
+            <th>Likely</th>
+            <th>Very Likely</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Buy from us again</td>
+            <td>
+              <input
+                type="radio"
+                id="buyAgain1"
+                name="buyAgain"
+                value="1"
+              /><label for="buyAgain1"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="buyAgain2"
+                name="buyAgain"
+                value="2"
+              /><label for="buyAgain2"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="buyAgain3"
+                name="buyAgain"
+                value="3"
+              /><label for="buyAgain3"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="buyAgain4"
+                name="buyAgain"
+                value="4"
+              /><label for="buyAgain4"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="buyAgain5"
+                name="buyAgain"
+                value="5"
+              /><label for="buyAgain5"></label>
+            </td>
+          </tr>
+          <tr>
+            <td>Recommend our products to others</td>
+            <td>
+              <input
+                type="radio"
+                id="products1"
+                name="products"
+                value="1"
+              /><label for="products1"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="products2"
+                name="products"
+                value="2"
+              /><label for="products2"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="products3"
+                name="products"
+                value="3"
+              /><label for="products3"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="products4"
+                name="products"
+                value="4"
+              /><label for="products4"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="products5"
+                name="products"
+                value="5"
+              /><label for="products5"></label>
+            </td>
+          </tr>
+          <tr>
+            <td>Recommend our company to others</td>
+            <td>
+              <input
+                type="radio"
+                id="company1"
+                name="company"
+                value="1"
+              /><label for="company1"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="company2"
+                name="company"
+                value="2"
+              /><label for="company2"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="company3"
+                name="company"
+                value="3"
+              /><label for="company3"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="company4"
+                name="company"
+                value="4"
+              /><label for="company4"></label>
+            </td>
+            <td>
+              <input
+                type="radio"
+                id="company5"
+                name="company"
+                value="5"
+              /><label for="company5"></label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <strong>Additional Comments or Suggestions</strong><br />
+      <textarea></textarea>
+    </form>
+  </body>
+</html>
