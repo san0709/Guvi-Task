@@ -18,45 +18,90 @@ inputElements.forEach(element => {
             radioButton.value = option.toLowerCase();
             radioButton.required = true;
 
-            // Wrap radio button and text in a span
             const optionSpan = document.createElement('span');
             optionSpan.appendChild(radioButton);
             optionSpan.appendChild(document.createTextNode(option));
 
-            // Append the span to the form
             formElement.appendChild(optionSpan);
         });
-    }
-    else if (element.toLowerCase() === 'choice of food') {
+    } else if (element.toLowerCase() === 'choice of food') {
         labelElement.textContent = 'Choice of Food';
-        formElement.appendChild(labelElement); // Move the label outside the loop
+        formElement.appendChild(labelElement);
         const foodOptions = ['South-Indian', 'North-Indian', 'Chinese', 'Pure-Veg', 'Vegan', 'Italian'];
         foodOptions.forEach(option => {
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.name = 'foodChoice'; // use the same name for all checkboxes
+            checkbox.name = 'foodChoice';
             checkbox.value = option.toLowerCase();
 
-            // Wrap checkbox and text in a span
             const optionSpan = document.createElement('span');
             optionSpan.appendChild(checkbox);
             optionSpan.appendChild(document.createTextNode(option));
 
-            // Append the span to the form
-            formElement.appendChild(document.createElement('br'));
             formElement.appendChild(optionSpan);
         });
-    }
-    else {
+    } else {
         labelElement.textContent = element;
         inputElement.type = 'text';
+        inputElement.required = true;
         inputElement.className = 'styled-input';
-
-        // Append the label and input to the form
+        inputElement.name = element.toLowerCase().replace(/\s/g, '');
         formElement.appendChild(labelElement);
         formElement.appendChild(inputElement);
     }
 });
 
-document.body.appendChild(formElement);
+const submitButton = document.createElement('input');
+submitButton.type = 'submit';
+formElement.addEventListener('submit', handleSubmit);
+const resetButton = document.createElement('input');
+resetButton.type = 'reset';
+formElement.append(submitButton, resetButton);
 
+const tableElement = document.createElement('table');
+const tableCaption = document.createElement('caption');
+tableCaption.innerText = "Form Values";
+const headElement = document.createElement('thead');
+const trElement = document.createElement('tr');
+const headFields = inputElements;
+headFields.forEach((element) => {
+    const tabledata = document.createElement('th');
+    tabledata.innerText = element;
+    trElement.appendChild(tabledata);
+});
+
+headElement.appendChild(trElement);
+tableElement.appendChild(headElement);
+
+// Append tbody and then tableCaption
+const tableBody = document.createElement('tbody');
+tableElement.appendChild(tableBody);
+tableElement.appendChild(tableCaption);
+
+document.body.appendChild(formElement);
+document.body.appendChild(tableElement);
+
+function handleSubmit(event) {
+    event.preventDefault();
+
+    const newRow = document.createElement('tr');
+    headFields.forEach((field) => {
+        const tableData = document.createElement('td');
+
+        if (field.toLowerCase() === 'gender') {
+            const selectedGender = formElement.elements['gender'].value;
+            tableData.innerText = selectedGender || '';
+        } else if (field.toLowerCase() === 'choice of food') {
+            const selectedFoodChoices = formElement.elements['foodChoice'];
+            const foodValues = Array.from(selectedFoodChoices).filter(choice => choice.checked).map(choice => choice.value);
+            tableData.innerText = foodValues.join(', ');
+        } else {
+            const inputElement = formElement.elements[field.toLowerCase().replace(/\s/g, '')];
+            tableData.innerText = inputElement ? inputElement.value : "";
+        }
+
+        newRow.appendChild(tableData);
+    });
+
+    tableBody.appendChild(newRow);
+}
