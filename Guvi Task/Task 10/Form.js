@@ -1,5 +1,18 @@
+const h1Element = document.createElement('h1');
+h1Element.id = "title";
+h1Element.innerText = "Dom Manipulation";
+document.body.appendChild(h1Element);
+
+const paraElement = document.createElement('p');
+paraElement.id = "description";
+paraElement.innerText = "The code dynamically creates an HTML form with input fields for personal information such as First Name, Last Name, Address, Pincode, Gender, Choice of Food, State, and Country. It uses JavaScript to handle form submission and display the entered values in a table.";
+document.body.appendChild(paraElement);
+
+
 const formElement = document.createElement('form');
 formElement.className = 'form-container';
+formElement.id = 'survey-form';
+
 
 const inputElements = ['First name', 'Last name', 'Address', 'Pincode', 'Gender', 'Choice of Food', 'State', 'Country'];
 
