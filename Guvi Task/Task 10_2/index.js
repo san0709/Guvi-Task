@@ -11,6 +11,7 @@ const displayArea = document.createElement("input");
 displayArea.className = "display";
 displayArea.type = "text";
 displayArea.name = "display";
+displayArea.style.width = "60px";
 div3.appendChild(displayArea);
 
 const div4 = document.createElement("div");
@@ -68,3 +69,21 @@ formElement.append(div3, div4, div5, div6, div7, div8);
 div2.appendChild(formElement);
 div1.appendChild(div2);
 document.body.appendChild(div1);
+
+// Define a variable to keep track of the current input
+let currentInput = '';
+
+// Add a keydown event listener to the document
+document.addEventListener('keydown', function (event) {
+    // Check if the pressed key is a number (0-9)
+    if (event.key.match(/[0-9]/)) {
+        // Append the pressed number to the current input
+        currentInput += event.key;
+        updateDisplay();
+    }
+});
+
+// Function to update the display with the current input
+function updateDisplay() {
+    displayArea.value = currentInput;
+}
