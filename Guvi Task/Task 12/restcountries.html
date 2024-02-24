@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Countries</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+
+    <style></style>
+  </head>
+  <body>
+    <div class="container" id="div-container">
+      <div class="position-relative card" style="width: 32rem">
+        <img
+          src="https://www.shutterstock.com/image-vector/set-flags-different-countries-flat-style-676540603"
+          class="card-img-top"
+          alt="Pictures of flags"
+        />
+
+        <div class="card-body">
+          <h5 class="card-title">REST COUNTRIES</h5>
+          <p class="card-text">
+            Please click on the designated button to access details about the
+            REST Countries API. The API is a web service adhering to REST
+            principles and provides various endpoints for retrieving information
+            such as population, area, languages, currencies, and time zones for
+            countries worldwide. Widely favored among developers, this API is
+            freely accessible to the public and returns data in JSON format,
+            facilitating seamless integration into applications or websites.
+          </p>
+          <button
+            onclick="getCountries() "
+            type="button"
+            class="btn btn-primary"
+          >
+            Click here
+          </button>
+        </div>
+      </div>
+
+      <table class="table table-striped table-hover">
+        <thead id="countries-table-head">
+          <!--Table head will be dynamically added here-->
+        </thead>
+
+        <tbody id="countries-table-body">
+          <!-- Rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="restcountries.js"></script>
+  </body>
+</html>
