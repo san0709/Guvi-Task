@@ -11,7 +11,8 @@ const displayArea = document.createElement("input");
 displayArea.className = "display";
 displayArea.type = "text";
 displayArea.name = "display";
-displayArea.style.width = "60px";
+displayArea.style.width = "300px";
+displayArea.style.border = "2px solid whitesmoke";
 div3.appendChild(displayArea);
 
 const div4 = document.createElement("div");
@@ -73,17 +74,73 @@ document.body.appendChild(div1);
 // Define a variable to keep track of the current input
 let currentInput = '';
 
-// Add a keydown event listener to the document
-document.addEventListener('keydown', function (event) {
-    // Check if the pressed key is a number (0-9)
-    if (event.key.match(/[0-9]/)) {
-        // Append the pressed number to the current input
-        currentInput += event.key;
-        updateDisplay();
-    }
-});
-
 // Function to update the display with the current input
 function updateDisplay() {
     displayArea.value = currentInput;
 }
+
+function addEventListenersToButtons() {
+    // Get all the buttons in the calculator UI
+    const buttons = document.querySelectorAll('.calculator input[type="button"]');
+
+    // Loop through each button and add a click event listener
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Get the value of the clicked button
+            const value = this.value;
+
+            // Handle different button clicks based on their values
+            switch (value) {
+                case 'AC':
+                    // Clear the display
+                    currentInput = '';
+                    break;
+                case 'DE':
+                    // Delete the last character from the display
+                    currentInput = currentInput.slice(0, -1);
+                    break;
+                case '=':
+                    // Evaluate the expression and display the result
+                    try {
+                        currentInput = eval(currentInput);
+                    } catch (error) {
+                        currentInput = 'Error';
+                    }
+                    break;
+                default:
+                    // Append the clicked button's value to the current input
+                    currentInput += value;
+            }
+
+            // Update the display
+            updateDisplay();
+        });
+    });
+}
+
+// Call the function to add event listeners to all buttons
+addEventListenersToButtons();
+
+
+
+// Add a keydown event listener to the document
+document.addEventListener('keydown', function (event) {
+    // Check if the pressed key is a number (0-9), one of the operators (+, -, *, /), or Enter key
+    if (event.key.match(/[0-9]|[-+*/]|Enter/)) {
+        // If Enter key is pressed, evaluate the expression
+        if (event.key === 'Enter') {
+            try {
+                currentInput = eval(currentInput);
+            } catch (error) {
+                currentInput = 'Error';
+            }
+        } else {
+            // Append the pressed key to the current input
+            currentInput += event.key;
+        }
+        updateDisplay();
+    }
+});
+
+
+
